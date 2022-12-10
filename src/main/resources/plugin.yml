@@ -1,0 +1,20 @@
+name: Hibernitt
+version: '${project.version}'
+main: me.theclashfruit.hibernitt.Hibernitt
+api-version: 1.19
+prefix: Hibernitt
+load: STARTUP
+authors: [ TheClashFruit ]
+description: Hibernate your minecraft server when no-one is online.
+website: https://theclashfruit.me/project/hibernitt
+commands:
+  hibernitt:
+    description: Hibernitt command
+    usage: /hibernitt
+    aliases: [ hbnitt ]
+    permission: hibernitt.cmd
+  hibernate:
+    description: Hibernate the server right away
+    usage: /hibernate
+    aliases: [ pause ]
+    permission: hibernitt.admin.hibernate
