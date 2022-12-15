@@ -1,6 +1,5 @@
 package me.theclashfruit.hibernitt;
 
-import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -8,7 +7,7 @@ public final class Hibernitt extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        FileConfiguration    config         = getConfig();
+        FileConfiguration config         = getConfig();
         //ConfigurationSection configMessages = getConfig().getConfigurationSection("messages");
 
         config.addDefault("prefix", "&8[&6Hibernitt&8] &7");
@@ -23,10 +22,12 @@ public final class Hibernitt extends JavaPlugin {
 
         getCommand("hibernitt").setExecutor(new CommandHandler());
         getCommand("hibernate").setExecutor(new CommandHandler());
+
+        getServer().getPluginManager().registerEvents(new PlayerEvents(getLogger()), this);
     }
 
     @Override
     public void onDisable() {
-        
+        // Plugin shutdown logic
     }
 }

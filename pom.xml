@@ -6,17 +6,17 @@
 
     <groupId>me.theclashfruit</groupId>
     <artifactId>hibernitt</artifactId>
-    <version>0.1.0-beta</version>
+    <version>0.1.0-alpha</version>
     <packaging>jar</packaging>
 
     <name>Hibernitt</name>
 
-    <description>Hibernate your minecraft server when no-one is online.</description>
+    <description>Hibernate your server when no-one is online.</description>
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>https://theclashfruit.me/project/hibernitt</url>
+    <url>https://theclashfruit.me/projects/hibernitt</url>
 
     <build>
         <plugins>
