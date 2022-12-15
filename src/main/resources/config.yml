@@ -1,0 +1,6 @@
+prefix: "&8[&6Hibernitt&8] &7"
+hibernate: true
+messages:
+  hibernate: "&aHibernating..."
+  unhibernate: "&aUnhibernating..."
+  error: "&cError while hibernating!"
