@@ -1,5 +1,6 @@
 package me.theclashfruit.hibernitt;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.bukkit.Bukkit;
@@ -43,14 +44,14 @@ public class PlayerEvents implements Listener {
         Player player = event.getPlayer();
         String quitMessage = event.getQuitMessage();
 
-        logger.info("Player " + player.getName() + " left the server!");
+        World leftWorld = player.getWorld();
+        List<Player> playersInWorld = leftWorld.getPlayers();
 
-        logger.info("No players online, hibernating...");
-
-        World mainWorld = getServer().getWorlds().get(0);
-
-        logger.info(mainWorld.getName());
-
-        Bukkit.unloadWorld(mainWorld, true);
+        if((playersInWorld.size() == 1)
+                && (playersInWorld.get(0).equals(player))
+                && (!leftWorld.equals(Bukkit.getServer().getWorlds().get(0)))) {
+            logger.info("Server is now empty, hibernating...");
+            Bukkit.getServer().unloadWorld(leftWorld, true);
+        }
     }
 }
